@@ -42,7 +42,7 @@
 set.seed(555)
 X <- cbind(rt(30,4),rnorm (30,0.5), runif(30,-3,3))
 mix.matrix <- matrix(c(3,2,1,2,4,-0.5,1,-0.5,2), ncol=3)
-X.mixed <- X \%*\% mix.matrix
+X.mixed <- X \%*\% t(mix.matrix)
 ica.X <- ics(X, covOrigin, cov4, S2args=list(location="Origin"))
 rank.ictest(ica.X)
 rm(.Random.seed)

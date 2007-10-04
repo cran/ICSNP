@@ -9,8 +9,8 @@
   Iterative algorithm to estimate \enc{Dümbgen}{Duembgen}'s shape matrix. 
 }
 \usage{
-duembgen.shape(X, init = NULL, steps = Inf, eps = 1e-06, maxiter = 100, 
-               in.R = FALSE, na.action = na.fail, ...)
+duembgen.shape(X, init = NULL, steps = Inf, eps = 1e-06, 
+               maxiter = 100, in.R = FALSE, na.action = na.fail, ...)
 }
 
 \arguments{

@@ -11,7 +11,7 @@ Matrix}
 }
 \usage{
 HR.Mest(X, maxiter = 100, eps.scale = 1e-06, eps.center = 1e-06,
- na.action = na.fail)
+        na.action = na.fail)
 }
 
 \arguments{

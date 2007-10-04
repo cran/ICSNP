@@ -11,7 +11,7 @@
 \usage{ HotellingsT2(X, \dots)
 
 \method{HotellingsT2}{default}(X, Y = NULL, mu = NULL, test = "f",
-na.action = na.fail, \dots)
+             na.action = na.fail, \dots)
 
 \method{HotellingsT2}{formula}(formula, na.action = na.fail, \dots) }
 

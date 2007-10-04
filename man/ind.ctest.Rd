@@ -6,7 +6,8 @@
   Performs the test that a group of variables is independent of an other based on marginal ranks. Three different score functions are available.
 }
 \usage{
-ind.ctest(X, index1, index2 = NULL, scores = "rank", na.action = na.fail)
+ind.ctest(X, index1, index2 = NULL, scores = "rank", 
+          na.action = na.fail)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,7 +21,7 @@ ind.ctest(X, index1, index2 = NULL, scores = "rank", na.action = na.fail)
           contain 'NA's.  Default is to fail.}
 }
 \details{
-  The test test if X[ , index1] is independent of X[ , index2] and is described in great detail in Puri and Sen (1971).
+  The test tests if X[ , index1] is independent of X[ , index2] and is described in great detail in Puri and Sen (1971).
 }
 \value{
   A list with class 'htest' containing the following components:

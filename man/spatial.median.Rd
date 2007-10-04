@@ -8,8 +8,8 @@
   iterative algorithm to compute the spatial median.
 }
 \usage{ 
-spatial.median(X, init = NULL, maxiter = 500, eps = 1e-06, print.it = FALSE,
- na.action = na.fail)
+spatial.median(X, init = NULL, maxiter = 500, eps = 1e-06, 
+               print.it = FALSE, na.action = na.fail)
 }
 
 \arguments{

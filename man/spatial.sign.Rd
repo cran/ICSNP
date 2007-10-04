@@ -10,7 +10,8 @@
   \code{\link{spatial.median}} or \code{\link{tyler.shape}}.
 }
 \usage{
-spatial.sign(X, center = TRUE, shape = TRUE, na.action = na.fail, ...)
+spatial.sign(X, center = TRUE, shape = TRUE, 
+             na.action = na.fail, ...)
 }
 
 \arguments{

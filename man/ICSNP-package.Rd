@@ -14,9 +14,9 @@ This package contains functions and tools for multivariate nonparametric tests a
 \tabular{ll}{
 Package: \tab ICSNP\cr
 Type: \tab Package\cr
-Version: \tab 1.0-0\cr
-Date: \tab 2007-04-28\cr
-License: \tab GPL 2.0 or higher\cr
+Version: \tab 1.0-1\cr
+Date: \tab 2007-10-04\cr
+License: \tab GPL (>= 2)\cr
 }
 This package contains tools for nonparametric multivariate analysis, including the estimation of location and shape as well as some tests for location and independece.
 Shape matrices from this package can be used as one of the scatter matrices needed in the package \code{\link[ICS:ICS-package]{ICS}} whereas the tests of this package

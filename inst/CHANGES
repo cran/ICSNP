@@ -1,0 +1,13 @@
+LOG of the CHANGES in the package ICSNP
+
+Version 1.0-1:
+
+* Encodings adjusted to the requirements of R 2.6.0
+* Standardizing the DESCRIPTION file
+* Changing in the examples of IC models X %*% A to X %*% t(A)
+* Updating some references
+* Correcting some typing errors
+
+Version 1.0-0:
+
+First version released on CRAN

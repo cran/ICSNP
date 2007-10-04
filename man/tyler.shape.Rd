@@ -1,3 +1,5 @@
+\encoding{latin1}
+
 \name{tyler.shape}
 \alias{tyler.shape}
 
@@ -7,7 +9,8 @@
 }
 \usage{
 tyler.shape(X, location = NULL, init = NULL, steps = Inf, eps = 1e-06, 
-            maxiter = 100, in.R = FALSE, print.it = FALSE, na.action = na.fail)
+            maxiter = 100, in.R = FALSE, print.it = FALSE, 
+            na.action = na.fail)
 }
 
 \arguments{

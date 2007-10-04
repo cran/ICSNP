@@ -11,7 +11,8 @@
 
 \usage{rank.ctest(X, \dots)
 
-\method{rank.ctest}{default}(X, Y = NULL, mu = NULL, scores = "rank", na.action = na.fail, \dots)
+\method{rank.ctest}{default}(X, Y = NULL, mu = NULL, scores = "rank", 
+           na.action = na.fail, \dots)
 
 \method{rank.ctest}{formula}(formula, na.action = na.fail, \dots)
 
@@ -55,6 +56,7 @@
 }
 
 \references{ \cite{Puri , M.L. and Sen, P.K. (1971), \emph{Nonparametric Methods in Multivariate Analysis}, New York: Wiley.  }
+
             \cite{Nordhausen, K., Oja, H. and Tyler, D.E. "2006", On the Efficiency of Invariant Multivariate Sign and Rank Tests, in 
             \emph{Festschrift of Tarmo Pukkila on his 60th Birthday}, 217--231.}}
             

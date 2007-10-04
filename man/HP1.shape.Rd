@@ -31,7 +31,7 @@ HP1.shape(X, location = "Estimate", na.action = na.fail, ...)
   This scatter matrix is based on the test for shape developed in the paper by Hallin and Paindaveine (2006), its usage with respect to the origin is demonstrated in Nordhausen et al. (2006).
 }
 
-\references{\cite{Hallin, M. and Paindaveine, D. (2006), Semiparametrically efficient rank-based inference for shape. I. Optimal rank-based tests for sphericity, \emph{Annals of Statistics}, \bold{34},  ?--?. }
+\references{\cite{Hallin, M. and Paindaveine, D. (2006), Semiparametrically efficient rank-based inference for shape. I. Optimal rank-based tests for sphericity, \emph{Annals of Statistics}, \bold{34},  2707--2756. }
 
             \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2006), Rank-based location tests in the independent component model, \emph{Manuscript}, \bold{1},  1--15. }}
 
