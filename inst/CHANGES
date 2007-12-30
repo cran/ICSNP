@@ -1,5 +1,10 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.0-2:
+
+* including a c sample version for rank.ctest
+* offering different p-value computation methods for rank.ictest 
+
 Version 1.0-1:
 
 * Encodings adjusted to the requirements of R 2.6.0

@@ -14,16 +14,17 @@ function(X,Y=NULL,mu=NULL,scores="rank",na.action=na.fail,...)
        {
        DNAME<-paste(deparse(substitute(X)),"and",deparse(substitute(Y)))
        }
-       
+    
+    X<-na.action(X)
+
+    if(!all(sapply(X, is.numeric))) stop("'X' must be numeric")
+    X<-as.matrix(X)   
     p<-dim(X)[2]
    
     if (is.null(mu)) mu<-rep(0,p)
     else if (length(mu)!=p) stop("length of 'mu' must equal the number of columns of 'X'")
 
-    X<-na.action(X)
-
-    if(!all(sapply(X, is.numeric))) stop("'X' must be numeric")
-    X<-as.matrix(X)
+    
 
     if (!is.null(Y)) 
         {
@@ -133,7 +134,7 @@ function(X,Y=NULL,mu=NULL,scores="rank",na.action=na.fail,...)
     }
 
 `rank.ctest.formula` <-
-function(formula, na.action = na.fail, ...)
+function(formula, na.action = na.fail,...)
    {
     if(missing(formula)
        || (length(formula) != 3)
@@ -149,40 +150,89 @@ function(formula, na.action = na.fail, ...)
     names(mf) <- NULL
     response <- attr(attr(mf, "terms"), "response")
     g <- factor(mf[[-response]])
-    if(nlevels(g) != 2)
-        stop("grouping factor must have exactly 2 levels")
-    DATA <- split(as.data.frame(mf[[response]]), g)
-    names(DATA) <- c("X", "Y")
-    y <- do.call("rank.ctest", c(DATA, list(...)))
-    y$data.name <- DNAME
-    return(y)
+    n.g<-nlevels(g)
+    if(n.g < 2)
+        stop("grouping factor must have two or more levels")
+    {    
+    if(n.g==2)
+        {
+        DATA <- split(as.data.frame(mf[[response]]), g)
+        names(DATA) <- c("X", "Y")
+        RVAL <- do.call("rank.ctest", c(DATA, list(...)))
+        RVAL$data.name <- DNAME
+        }   
+    else
+        { 
+        if ("mu" %in% names(list(...)) ) {if(any( list(...)$mu!=0 )) {stop("if there are more than two groups 'mu' should not be specified or 0")}}
+        DATA <- as.matrix(mf[[response]])
+        names(DATA)<-"X"
+        names(g)<-g
+        y <- do.call("MaRaTe.internal.csample",list(DATA,g,...))
+        
+        STATISTIC<-y$test.statistic
+        names(STATISTIC)<-"T"
+        PVAL<-y$p.value
+        if ("scores" %in% names(list(...)) ) {scores=list(...)$scores} 
+        else {scores="rank"}
+        METHOD<- switch(scores,"sign"="Marginal C Sample Median Test",
+                              "rank"="Marginal C Sample Rank Sum Test", 
+                              "normal"="Marginal C Sample Normal Score Test")
+        PARAMETER<-y$df
+        names(PARAMETER)<-c("df")
+        RVAL<-list(statistic=STATISTIC,p.value=PVAL,method=METHOD,parameter=PARAMETER, data.name=DNAME)
+        class(RVAL)<-"htest"           
+        
+        }
+        return(RVAL)
+    }
   }
 
 rank.ctest.ics <-
 function(X, g = NULL, index = NULL, na.action = na.fail, ...)
     {
     
-    if (!is.null(g)) DNAME<-paste(deparse(substitute(X)),"and",deparse(substitute(g)))
-    else DNAME<-deparse(substitute(X))
+    if (!is.null(g)) {DNAME<-paste(deparse(substitute(X)),"and",deparse(substitute(g)))}
+    else {DNAME<-deparse(substitute(X))}
     if (class(X) != "ics") stop("'ics' must be of class 'ics'") 
-    if (!is.null(g) & !is.factor(g)) stop("'g' must be a factor with two levels")
-    if (!is.null(g) & nlevels(g) != 2) stop("'g' must be a factor with two levels")
+    if (!is.null(g) & !is.factor(g)) stop("'g' must be a factor with at least two levels")
+    if (!is.null(g) & nlevels(g) < 2) stop("'g' must be a factor with at least two levels")
     
-    Z <- ics.components(X)
+    Z <- as.matrix(ics.components(X))
     p <- dim(Z)[2]
     if (is.null(index)) index <-  1:p
     if(is.null(g))
         {
-        DATA<-list(X=Z[,index])
+        DATA<-list(X=as.matrix(Z[,index]))
         y <- do.call("rank.ctest", c(DATA, list(...)))
         y$data.name <- DNAME
         }
     if(!is.null(g))
-        {
-        DATA <- split(Z[,index], g)
+        { 
+        if (nlevels(g)==2){
+        DATA <- split(as.data.frame(Z[,index]), g)
         names(DATA) <- c("X", "Y")
-        y <- do.call("rank.ctest", c(DATA, list(...)))
+        y <- do.call("rank.ctest", c(DATA,...))
         y$data.name <- DNAME
+        }
+        else{
+        DATA <- as.matrix(Z[,index])
+        y <- do.call("MaRaTe.internal.csample",list(X=DATA,g=g,...))
+        
+        STATISTIC<-y$test.statistic
+        names(STATISTIC)<-"T"
+        PVAL<-y$p.value
+        if ("scores" %in% names(list(...)) ) {scores=list(...)$scores} 
+        else {scores="rank"}
+        METHOD<- switch(scores,"sign"="Marginal C Sample Median Test",
+                              "rank"="Marginal C Sample Rank Sum Test", 
+                              "normal"="Marginal C Sample Normal Score Test")
+        PARAMETER<-y$df
+        names(PARAMETER)<-c("df")
+        RVAL<-list(statistic=STATISTIC,p.value=PVAL,method=METHOD,parameter=PARAMETER, data.name=DNAME)
+        class(RVAL)<-"htest" 
+        y<-RVAL
+        y$data.name <- DNAME
+        }
         }
     return(y)    
     }

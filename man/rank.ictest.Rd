@@ -9,7 +9,8 @@
 }
 \usage{rank.ictest(X, \dots)
 
-\method{rank.ictest}{default}(X, mu = NULL, scores = "rank", na.action = na.fail, \dots)
+\method{rank.ictest}{default}(X, mu = NULL, scores = "rank", method = "approximation",
+            n.simu = 1000, na.action = na.fail, \dots)
 
 \method{rank.ictest}{ics}(X, index = NULL, na.action = na.fail, \dots)}
 
@@ -17,6 +18,10 @@
   \item{X}{ a numeric data frame or matrix or an ics object.}
   \item{mu}{ a vector indicating the hypothesized value of the location. NULL represents the origin.}
   \item{scores}{ options are 'rank' for the signed rank test, 'sign' for the sign test and 'normal' for the normal score test. }
+  \item{method}{defines the method used for the computation of the p-value. The possibilites are
+        "approximation" (default), "simulation" or "permutation". Details below.}
+  \item{n.simu}{if '\code{method}=simulation' or '\code{method}=permutation' this specifies the number of replications used in the
+                simulation or permutation procedure. }
   \item{index}{an integer vector that gives the columns to choose from invariant coordinates form the 'ics' object. The default uses all columns.}
   \item{na.action}{a function which indicates what should happen when the data
           contain 'NA's.  Default is to fail. }
@@ -24,6 +29,11 @@
 }
 \details{
   The test is normally used to test for location in the symmetric independent component model.
+  
+  By default the limiting distribution is used to compute the p-values. However for moderate sample sizes (N=50) was observed in 
+  Nordhausen et al. (2007) that the normal score test can be sometimes slightly biased. Therefore the argument \code{method}
+  can be used to get p-values based on simulations from a multivariate normal under the null or by permuting the signs of the centered
+  observations.  
 }
 \value{
   A list with class 'htest' containing the following components:
@@ -35,16 +45,18 @@
   \item{method}{a character string indicating what type of test was performed.}
   \item{data.name}{a character string giving the name of the data.}
 }
-\references{ \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2007), Rank-based location tests in the independent component model, \emph{Manuscript}, \bold{1},  1--15. }  }
+\references{ \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2007), Rank-based location tests in the independent component model, \emph{submitted}, \bold{1},  1--33. }  }
 \author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
 
 \examples{
 set.seed(555)
-X <- cbind(rt(30,4),rnorm (30,0.5), runif(30,-3,3))
+X <- cbind(rt(30,8), rnorm(30,0.5), runif(30,-3,3))
 mix.matrix <- matrix(c(3,2,1,2,4,-0.5,1,-0.5,2), ncol=3)
 X.mixed <- X \%*\% t(mix.matrix)
-ica.X <- ics(X, covOrigin, cov4, S2args=list(location="Origin"))
+ica.X <- ics(X, covOrigin, cov4, S2args = list(location = "Origin"))
 rank.ictest(ica.X)
+rank.ictest(ica.X, scores = "normal", method = "simu")
+rank.ictest(ics.components(ica.X), scores = "normal", method = "perm")
 rm(.Random.seed)
          }
 

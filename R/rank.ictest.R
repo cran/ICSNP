@@ -4,10 +4,11 @@
     }
 
 `rank.ictest.default` <-
-function(X,mu=NULL,scores="rank",na.action=na.fail,...)
+function(X,mu=NULL,scores="rank",method = "approximation", n.simu = 1000,na.action=na.fail,...)
     {
     DNAME<-deparse(substitute(X))
     
+    n<-dim(X)[1]
     p<-dim(X)[2]
 
     if (is.null(mu)) mu<-rep(0,p)
@@ -20,6 +21,8 @@ function(X,mu=NULL,scores="rank",na.action=na.fail,...)
 
     X<-sweep(X,2,mu)
     score<-match.arg(scores,c("sign","rank","normal"))
+    method <- match.arg(method,c("approximation","simulation","permutation"))
+    
 
     res1<-switch(score,
         "sign"={
@@ -52,12 +55,27 @@ function(X,mu=NULL,scores="rank",na.action=na.fail,...)
                
                RVAL}
         )
+        
+     PARAMETER<-p
+     names(PARAMETER)<-"df" 
+    
+     if (method=="simulation"){
+     Q.simu<-replicate(n.simu,Q.Test(matrix(rnorm(n*p),ncol=p),score)$test.statistic)
+     res1$p.value<-mean(Q.simu>res1$statistic)
+     PARAMETER<-n.simu
+     names(PARAMETER)<-"replications"
+     }
+     
+     if (method=="permutation"){
+     Q.simu<-replicate(n.simu,Q.Test(sample(c(1,-1), n, replace = T)*X,score)$test.statistic)
+     res1$p.value<-mean(Q.simu>res1$statistic)
+     PARAMETER<-n.simu
+     names(PARAMETER)<-"replications"
+     }
     
     ALTERNATIVE="two.sided"
     NVAL<-paste("c(",paste(mu,collapse=","),")",sep="")
     names(NVAL)<-"location"
-    PARAMETER<-p
-    names(PARAMETER)<-"df"
     res<-c(res1,list(data.name=DNAME,parameter=PARAMETER,alternative=ALTERNATIVE,null.value=NVAL))
     class(res)<-"htest"
     return(res)

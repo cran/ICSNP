@@ -21,7 +21,7 @@ ind.ictest(X, index1, index2 = NULL, scores = "rank",
         a normal score test is performed.}
   \item{method}{ defines the method used for the computation of the p-value. The possobilites are
         "approximation" (default), "simulation" or "permutation". Details below.}
-  \item{n.simu}{if '\code{method}=simulation' or '\code{method}=permutation' this specifies the number of replications usedin the
+  \item{n.simu}{if '\code{method} = "simulation"' or '\code{method} = "permutation"' this specifies the number of replications used in the
                 simulation or permutation procedure. }
   \item{\dots}{further arguments to be passed to the function \code{\link[ICS]{ics}}}
   \item{na.action}{a function which indicates what should happen when the data
