@@ -14,8 +14,8 @@ This package contains functions and tools for multivariate nonparametric tests a
 \tabular{ll}{
 Package: \tab ICSNP\cr
 Type: \tab Package\cr
-Version: \tab 1.0-2\cr
-Date: \tab 2007-12-30\cr
+Version: \tab 1.0-3\cr
+Date: \tab 2009-04-20\cr
 License: \tab GPL (>= 2)\cr
 }
 This package contains tools for nonparametric multivariate analysis, including the estimation of location and shape as well as some tests for location and independece.

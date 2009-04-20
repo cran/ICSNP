@@ -38,7 +38,7 @@ The algorithm also allows for a k-step version where the iteration is run for a 
 \references{
    \cite{Tyler, D.E. (1987), A distribution-free M-estimator of scatter, \emph{Annals of Statistics}, \bold{15},  234--251. }  
 }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{ssirkia@maths.jyu.fi}}
+\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
 \seealso{ \code{\link{duembgen.shape}}, \code{\link{HR.Mest}}}
 \examples{
 set.seed(654321)

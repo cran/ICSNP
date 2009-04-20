@@ -45,7 +45,7 @@
   \item{method}{a character string indicating what type of test was performed.}
   \item{data.name}{a character string giving the name of the data.}
 }
-\references{ \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2007), Rank-based location tests in the independent component model, \emph{submitted}, \bold{1},  1--33. }  }
+\references{ \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2009), Signed-rank tests for location in the symmetric independent component model, \emph{Journal of Multivariate Analysis}, \bold{100},  821--834. }  }
 \author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
 
 \examples{

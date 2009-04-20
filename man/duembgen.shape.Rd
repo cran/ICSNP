@@ -37,7 +37,7 @@ The algorithm also allows for a k-step version where the iteration is run for a 
 \references{
    \cite{\enc{Dümbgen}{Duembgen}, L. (1998), On Tyler's M-functional of scatter in high dimension, \emph{Annals of Institute of Statistical Mathematics}, \bold{50},  471--491. }  
 }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{ssirkia@maths.jyu.fi}}
+\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
 \seealso{ \code{\link{tyler.shape}}}
 \examples{
 set.seed(654321)

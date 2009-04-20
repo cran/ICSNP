@@ -33,6 +33,6 @@ function(X,maxiter=100,eps.scale=1e-6,eps.center=1e-6,na.action=na.fail)
         differ <- sqrt(sum((theta.k1-theta.k2)^2))
         }
     scatter <- solve(A.k2 %*% t(A.k2))
-    res <- list(center=theta.k2,scatter=V.k2)
+    res <- list(center=as.vector(theta.k2),scatter=V.k2)
     return(res)
     }

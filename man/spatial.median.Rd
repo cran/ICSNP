@@ -29,7 +29,7 @@ spatial.median(X, init = NULL, maxiter = 500, eps = 1e-06,
 }
 \references{\cite{Vardi, Y. and Zhang, C.-H. (1999), The multivariate L1-median and associated data depth, \emph{PNAS}, \bold{97},  1423--1426. }}
 
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi} and Seija \enc{Sirkiä}{Sirkia}, \email{ssirkia@maths.jyu.fi}}
+\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi} and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
 
 \examples{
 set.seed(654321)

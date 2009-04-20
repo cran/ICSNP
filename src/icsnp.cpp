@@ -50,6 +50,21 @@ using namespace std;
       result[r]=X[e*n+i]-X[e*n+j];
       r++;}
   }
+  
+  void pairprod(double *X, int *nk, double *result)
+  {
+    int n=nk[0]; 
+    int k=nk[1]; 
+    int i;
+    int j;
+    int e;
+    int r=0;
+    for (i=0; i<(n-1); i++)
+      for (j=(i+1); j<n; j++)
+    for (e=0;e<k;e++) {
+      result[r]=X[e*n+i]*X[e*n+j];
+      r++;}
+  }
 
   void pairsum(double *X, int *nk, double *result)
   {

@@ -4,7 +4,7 @@ importFrom(mvtnorm, rmvnorm)
 
 export(rank.ctest,rank.ictest,HotellingsT2,spatial.median,
 spatial.sign,HP1.shape,HR.Mest, duembgen.shape,
-tyler.shape,ind.ictest,ind.ctest)
+tyler.shape,ind.ictest,ind.ctest, pair.prod, pair.sum, pair.diff)
 
 S3method(HotellingsT2,default)
 S3method(HotellingsT2,formula)

@@ -15,35 +15,36 @@ HR.Mest(X, maxiter = 100, eps.scale = 1e-06, eps.center = 1e-06,
 }
 
 \arguments{
-  \item{X}{ a numeric data frame or matrix.  }
-  \item{maxiter}{ maximum number of iterations. }
-  \item{eps.scale}{ convergence tolerance for the Tyler's shape matrix subroutine.}
-  \item{eps.center}{ convergence tolerance for the location estimate.}
-  \item{na.action}{ a function which indicates what should happen when the data
+  \item{X}{a numeric data frame or matrix.  }
+  \item{maxiter}{maximum number of iterations. }
+  \item{eps.scale}{convergence tolerance for the Tyler's shape matrix subroutine.}
+  \item{eps.center}{convergence tolerance for the location estimate.}
+  \item{na.action}{a function which indicates what should happen when the data
           contain 'NA's.  Default is to fail.}
 }
 \details{
   The algorithm follows the idea of Hettmansperger and Randles (2002). There are, however, some differences. This algorithm
   has the vector of marginal medians as starting point for the location and the starting shape matrix is Tyler's shape
   matrix based on the vector of marginal medians and has then a location step and a shape step which are:
-  \item{location step k+1:}{ transforming the data as \eqn{y=x V_{k}^{-\frac{1}{2}}}{y = x V_k^-0.5} and
+  \describe{
+  \item{location step k+1:}{transforming the data as \eqn{y=x V_{k}^{-\frac{1}{2}}}{y = x V_k^-0.5} and
                        computing the spatial median \eqn{\mu_y}{mu_y} of y using the function \code{spatial.median}. Then
                        retransforming \eqn{\mu_y}{mu_y} to the original scale \eqn{\mu_{x,k+1}=\mu_y V_{k}^{\frac{1}{2}} }{mu_x,k+1 = mu_y V_k^0.5 }.
                       }
   \item{shape step k+1:}{computing Tyler's shape matrix  \eqn{V_{k+1}}{V_k+1} with respect to \eqn{\mu_{x,k+1}}{mu_x,k+1} by using the function \code{tyler.shape}.}
-
+  }
   The algorithm stops when the difference between two subsequent location estimates is smaller than \code{eps.center}.
 
   There is no proof that the algorithm converges.
 }
 \value{
  A list containing:
-  \item{center }{vector with the estimated loaction.}
-  \item{scatter }{matrix of the estimated scatter.}
+  \item{center}{vector with the estimated loaction.}
+  \item{scatter}{matrix of the estimated scatter.}
 }
 \references{\cite{Hettmansperger, T.P. and Randles, R.H. (2002), A practical affine equivariant multivariate median, \emph{Biometrika}, \bold{89},  851--860. }}
 
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{ssirkia@maths.jyu.fi}}
+\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
 
 \examples{
 set.seed(654321)
@@ -58,5 +59,5 @@ rm(.Random.seed)
          }
 
 
-\keyword{ multivariate }
+\keyword{multivariate}
 \keyword{nonparametric}

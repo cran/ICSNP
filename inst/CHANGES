@@ -1,5 +1,11 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.0-3:
+
+* fixing a bug in HR.Mest
+* new functions pair.diff, pair.sum and pair.prod
+* updating help files
+
 Version 1.0-2:
 
 * including a c sample version for rank.ctest

@@ -33,7 +33,8 @@ HP1.shape(X, location = "Estimate", na.action = na.fail, ...)
 
 \references{\cite{Hallin, M. and Paindaveine, D. (2006), Semiparametrically efficient rank-based inference for shape. I. Optimal rank-based tests for sphericity, \emph{Annals of Statistics}, \bold{34},  2707--2756. }
 
-            \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2006), Rank-based location tests in the independent component model, \emph{Manuscript}, \bold{1},  1--15. }}
+            \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2009), Signed-rank tests for location in the symmetric independent component model, \emph{Journal of Multivariate Analysis}, \bold{100},  821--834. }}
+
 
 \author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
 
