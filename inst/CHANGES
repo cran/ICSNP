@@ -1,5 +1,11 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.0-4:
+
+* new functions duembgen.shape, symm.huber, symm.huber.wt, vdw.loc, hl.loc
+* changing in ind.ictest that the location estimate score corresponds to the score used for testing
+* updating some functions to make use of colnames and rownames
+
 Version 1.0-3:
 
 * fixing a bug in HR.Mest

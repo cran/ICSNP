@@ -15,7 +15,7 @@ duembgen.shape(X, init = NULL, steps = Inf, eps = 1e-06,
 
 \arguments{
   \item{X}{numeric data matrix or dataframe.}
-  \item{init}{an optional matrix giving the starting value for the iteration}
+  \item{init}{an optional matrix giving the starting value for the iteration.}
   \item{steps}{a fixed number of iteration steps to take. See details.}
   \item{eps}{ convergence tolerance.}
   \item{maxiter}{ maximum number of iterations.}
@@ -38,7 +38,7 @@ The algorithm also allows for a k-step version where the iteration is run for a 
    \cite{\enc{Dümbgen}{Duembgen}, L. (1998), On Tyler's M-functional of scatter in high dimension, \emph{Annals of Institute of Statistical Mathematics}, \bold{50},  471--491. }  
 }
 \author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
-\seealso{ \code{\link{tyler.shape}}}
+\seealso{ \code{\link{tyler.shape}}, \code{\link{duembgen.shape.wt}}}
 \examples{
 set.seed(654321)
 cov.matrix <- matrix(c(3,2,1,2,4,-0.5,1,-0.5,2), ncol=3)

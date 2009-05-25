@@ -28,5 +28,7 @@ function(X,location="Estimate",na.action=na.fail,...)
     radius<-sqrt(mahalanobis(X,center,V))
     scores.radius<-qchisq(rank(radius)/(n+1),p)
     W<-V.sqrt %*% ((1/n)*(t(scores.radius*spat.signs) %*% spat.signs)) %*% V.sqrt
+    colnames(W) <- colnames(X)
+    rownames(W) <- colnames(X)
     W/det(W)^(1/p)
     }

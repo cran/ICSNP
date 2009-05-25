@@ -29,10 +29,10 @@ ind.ictest(X, index1, index2 = NULL, scores = "rank",
 }
 \details{
   Assumed is here that \code{X[ , index1]} comes from a symmetric independent component model which in turn is independent from \code{X[ , index2]} which has also
-  an underlying symmetric independent component model. This function recovers the independent components using the function \code{\link[ICS]{ics}}, centers them by their marginal
-  medians and performs then the test as described in Oja, Paindaveine and Taskinen (2007). 
+  an underlying symmetric independent component model. This function recovers the independent components using the function \code{\link[ICS]{ics}}, centers them by a marginal
+  loaction estimate based on the same scores that will be used in the actual test. The test is described in Oja, Paindaveine and Taskinen (2009). 
   The asymptotic chi-square distibution is however even for large sample sizes inadequat and therefore p-values can be simulated by resampling the test statistic under the null
-  hypothesis or by permuting the rows of the independent components of \code{X[ , index2]}. Both alternatives are also described in Oja, Paindaveine and Taskinen (2007).
+  hypothesis or by permuting the rows of the independent components of \code{X[ , index2]}. Both alternatives are also described in Oja, Paindaveine and Taskinen (2009).
 }
 \value{
   A list with class 'htest' containing the following components:
@@ -42,7 +42,7 @@ ind.ictest(X, index1, index2 = NULL, scores = "rank",
   \item{method}{a character string indicating what type of test was performed.}
   \item{data.name}{a character string giving the name of the data.}
 }
-\references{ \cite{Oja, H. and Paindaveine, D. and Taskinen, S. (2007), Parametric and Nonparametric Test for Multivariate Independence in IC Models, \emph{Manuscript}, \bold{1},  1--23. }  }
+\references{ \cite{Oja, H. and Paindaveine, D. and Taskinen, S. (2009), Parametric and Nonparametric Test for Multivariate Independence in IC Models, \emph{Manuscript}, \bold{1},  1--47. }  }
 \author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
 \examples{
 Z1<-cbind(rt(500,5),rnorm(500),runif(500))

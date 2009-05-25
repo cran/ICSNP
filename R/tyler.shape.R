@@ -80,6 +80,8 @@ function(X,location=NULL,init=NULL,steps=Inf,eps=1e-6,maxiter=100,in.R=FALSE,pri
     V.shape<-solve(V.new)
     V<-V.shape/det(V.shape)^(1/p)
     
+    colnames(V) <- colnames(X) 
+    rownames(V) <- colnames(X) 
     return(V)
     
     }

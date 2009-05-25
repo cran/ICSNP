@@ -67,6 +67,7 @@ function(X,center=TRUE,shape=TRUE,na.action=na.fail,...)
     y.norm <- norm(y) 
     spatial.signs<-sweep(y,1,y.norm,"/")
     spatial.signs[y.norm==0,] <- 0
+    rownames(spatial.signs) <- rownames(X)
     attr(spatial.signs,"center")<-as.vector(center)
     attr(spatial.signs,"shape")<-shape
     return(spatial.signs)

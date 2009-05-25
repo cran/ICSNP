@@ -13,7 +13,7 @@ ind.ictest<-function(X,index1,index2 = NULL,scores="rank",method = "approximatio
     if(!is.null(index2)) {if(any(index1 %in% index2)) 
     stop("'index1' and 'index2' cannot select the same columns")}
     
-    n<-dim(X)[1]
+    
     p<-dim(X)[2]
     
     if (length(index1)==p) stop ("'index1' cannot select all or no columns of 'X'")
@@ -28,29 +28,44 @@ ind.ictest<-function(X,index1,index2 = NULL,scores="rank",method = "approximatio
     else
     {X2<-as.matrix(X[,index2])}
     p.ind2<-dim(X2)[2]
-    X<-cbind(X1,X2)
+    
+    X<-data.frame(X1=I(X1),X2=I(X2))
     X<-na.action(X)
-
+    n<-dim(X)[1]
+    
     if(!all(sapply(X, is.numeric))) stop("all selected columns must be numeric")
-    X<-as.matrix(X)
+    
     
     if (p.ind1==1)
-    {ic.X1 <- X1}
+    {ic.X1 <- X$X1}
     else
-    {ic.X1 <- ics.components(ics(X1,...))}
+    {ic.X1 <- ics.components(ics(X$X1,...))}
     
     if (p.ind2==1)
-    {ic.X2 <- X2}
+    {ic.X2 <- X$X2}
     else
-    {ic.X2 <- ics.components(ics(X2,...))}
+    {ic.X2 <- ics.components(ics(X$X2,...))}
     
-    med.ic.X1 <- apply(ic.X1,2,median)
-    Z.X1 <- sweep(ic.X1,2,med.ic.X1,"-")
+    switch(scores, {
+                   "sign"=
+                   loc.ic.X1 <- apply(ic.X1,2,median)
+                   loc.ic.X2 <- apply(ic.X2,2,median)
+                   },
+                  "rank"= {
+                  loc.ic.X1 <- apply(ic.X1,2,hl.loc)
+                  loc.ic.X2 <- apply(ic.X2,2,hl.loc)
+                  },
+                  "normal"= {
+                  loc.ic.X1 <- apply(ic.X1,2,vdw.loc)
+                  loc.ic.X2 <- apply(ic.X2,2,vdw.loc)
+                  })  
     
-    med.ic.X2 <- apply(ic.X2,2,median)
-    Z.X2 <- sweep(ic.X2,2,med.ic.X2,"-")
     
-    Zs<-cbind(Z.X1,Z.X2)
+    
+    Z.X1 <- sweep(ic.X1,2,loc.ic.X1,"-")
+    Z.X2 <- sweep(ic.X2,2,loc.ic.X2,"-")
+    
+    #Zs<-cbind(Z.X1,Z.X2)
     
     Z1.signs <- apply(Z.X1,2,sign)
     Z1.ranks <- apply(abs(Z.X1),2,rank)
