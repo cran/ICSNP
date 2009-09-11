@@ -8,13 +8,13 @@ function(X,mu=NULL,scores="rank",method = "approximation", n.simu = 1000,na.acti
     {
     DNAME<-deparse(substitute(X))
     
-    n<-dim(X)[1]
     p<-dim(X)[2]
 
     if (is.null(mu)) mu<-rep(0,p)
     else if (length(mu)!=p) stop("length of 'mu' must equal the number of columns of 'X'")
     
     X<-na.action(X)
+    n<-dim(X)[1]
     
     if(!all(sapply(X, is.numeric))) stop("'X' must be numeric")
     X<-as.matrix(X)

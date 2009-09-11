@@ -13,7 +13,7 @@ ind.ctest<-function(X,index1,index2 = NULL,scores="rank",na.action=na.fail)
     if(!is.null(index2)) {if(any(index1 %in% index2)) 
     stop("'index1' and 'index2' cannot select the same columns")}
     
-    n<-dim(X)[1]
+    
     p<-dim(X)[2]
     
     if (length(index1)==p) stop ("'index1' cannot select all or no columns of 'X'")
@@ -27,7 +27,8 @@ ind.ctest<-function(X,index1,index2 = NULL,scores="rank",na.action=na.fail)
     p.ind2<-dim(X2)[2]
     X<-cbind(X1,X2)
     X<-na.action(X)
-
+    n<-dim(X)[1]
+    
     if(!all(sapply(X, is.numeric))) stop("all selected columns must be numeric")
     X<-as.matrix(X)
     

@@ -24,4 +24,3 @@ function(X,init=NULL,maxiter=500,eps=1e-6,print.it=FALSE,na.action=na.fail)
    
         return(y)
     }
-

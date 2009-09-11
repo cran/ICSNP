@@ -31,7 +31,7 @@
   The test is normally used to test for location in the symmetric independent component model.
   
   By default the limiting distribution is used to compute the p-values. However for moderate sample sizes (N=50) was observed in 
-  Nordhausen et al. (2007) that the normal score test can be sometimes slightly biased. Therefore the argument \code{method}
+  Nordhausen et al. (2009) that the normal score test can be sometimes slightly biased. Therefore the argument \code{method}
   can be used to get p-values based on simulations from a multivariate normal under the null or by permuting the signs of the centered
   observations.  
 }

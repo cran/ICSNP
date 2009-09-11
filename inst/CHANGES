@@ -1,5 +1,11 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.0-5
+
+* updating some documentation
+* fixing a bug in spatial.median (reported by Sami Ayramo)
+* cleaning some other code 
+
 Version 1.0-4:
 
 * new functions duembgen.shape, symm.huber, symm.huber.wt, vdw.loc, hl.loc
