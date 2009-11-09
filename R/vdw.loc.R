@@ -29,9 +29,10 @@ vdw.loc <- function(x, int.diff=10, maxiter=1000, na.action=na.fail)
                            crit.min2 <- crit[index.min2]
                            x1 <-y.sorted[index.min+int.lower-1]
                            x2 <-y.sorted[index.min2+int.lower-1]
+                           if(x1==x2) {res <- x1} else{
                            Mid<-data.frame(x=c(x1,x2),crit=c(crit.min,crit.min2))
                            perc<-with(Mid, abs(crit[1])/ (max(crit)-min(crit)))
-                           res<-with(Mid, x[1] + sign(crit[2]) * perc* (max(x)-min(x)))
+                           res<-with(Mid, x[1] + sign(crit[2]) * perc* (max(x)-min(x)))}
                            break} else
         {int.middle<- floor((int.lower +int.upper)/2)
         Mid<-T.vdw.loc(y.sorted[int.middle], x)

@@ -1,5 +1,12 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.0-6
+
+* updating some documentation
+* fixing a bug in vdw.loc
+* new data set LASERI
+* new function HP.loc.test
+
 Version 1.0-5
 
 * updating some documentation

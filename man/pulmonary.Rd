@@ -14,6 +14,9 @@
     \item{\code{CC}}{change in CC (closing capacity) after 6 hours.}
   }
 }
+\note{
+There is also a different version of this data set around. In the different version the FVC value of subject 11 is -0.01 instead of -0.10.
+}
 
 \source{
   \cite{Merchant, J. A., Halprin, G. M., Hudson, A. R. Kilburn, K. H., McKenzie, W. N., Hurst, D. J. and Bermazohnm P. (1975), 
