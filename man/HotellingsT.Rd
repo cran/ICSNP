@@ -60,7 +60,8 @@ multivariate analysis}, New Jersey: Wiley. }  }
 
 \author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
 
-\examples{ # one sample test:
+\examples{ 
+# one sample test:
 
 data(pulmonary)
 

@@ -1,5 +1,10 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.0.7
+
+* fixing a bug in HP.loc.test and making the function faster
+* renaming the change log to make it visible on the CRAN pages
+
 Version 1.0-6
 
 * updating some documentation
