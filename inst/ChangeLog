@@ -1,5 +1,10 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.0.8
+
+* fixing a bug in HR.Mest  (reported by Davy Paindaveine)
+* improving duembgen.shape  (using C++ code provided by Seija and Jari Miettinen)
+
 Version 1.0.7
 
 * fixing a bug in HP.loc.test and making the function faster

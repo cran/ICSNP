@@ -15,7 +15,7 @@ duembgen.shape(X, init = NULL, steps = Inf, eps = 1e-06,
 
 \arguments{
   \item{X}{numeric data matrix or dataframe.}
-  \item{init}{an optional matrix giving the starting value for the iteration.}
+  \item{init}{an optional matrix giving the starting value for the iteration. Otherwise the regular covariance is used after transforming it to a shape matrix wit determinant 1.}
   \item{steps}{a fixed number of iteration steps to take. See details.}
   \item{eps}{ convergence tolerance.}
   \item{maxiter}{ maximum number of iterations.}
@@ -37,7 +37,7 @@ The algorithm also allows for a k-step version where the iteration is run for a 
 \references{
    \cite{\enc{Dümbgen}{Duembgen}, L. (1998), On Tyler's M-functional of scatter in high dimension, \emph{Annals of Institute of Statistical Mathematics}, \bold{50},  471--491. }  
 }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
+\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}, and some of the C++ is based on work by Jari Miettinen}
 \seealso{ \code{\link{tyler.shape}}, \code{\link{duembgen.shape.wt}}}
 \examples{
 set.seed(654321)

@@ -353,4 +353,154 @@ void Q2internals(double *X, int *nk, double *result)
   delete [] ave;
 }
 
+
+
+void sum_of_diff_sign_outers(double *X, int *nk, double *result)
+  {
+    int n=nk[0]; 
+    int k=nk[1]; 
+    int i;
+    int j;
+    int m;  
+    int p=0;
+    double r; 
+    double *u;
+    u = new double[k];
+    double **Y = new double* [k];
+    for (i=0; i<k; i++) Y[i]=new double [k];
+
+    for(i=0;i<k;i++)
+      for(j=0;j<k;j++)
+	Y[i][j]=0.0;
+
+    for(i=0;i<(n-1);i++)
+      for(j=(i+1);j<n;j++) {
+	//go over the pairs
+	r=0;
+	for(m=0;m<k;m++) {
+	  //compute the difference and its squared norm
+	  u[m] = X[m*n+i]-X[m*n+j];
+	  r+=(u[m]*u[m]);
+	}
+	r=sqrt(r);
+	for(m=0;m<k;m++)
+	  //compose the sign
+	  u[m]=u[m]/r;
+	for(m=0;m<k;m++)
+	  for(p=0;p<k;p++)
+	    if(p<(m+1)) 
+	      //compute the outer product elements
+	      //and sum to the sum matrix
+	      Y[m][p]+=(u[m]*u[p]);
+      } // j, i
+
+    for(m=0;m<(k-1);m++)
+      for(p=(m+1);p<k;p++)
+	//fill up the matrix
+	Y[m][p]=Y[p][m];
+
+    i=0;
+    for(m=0;m<k;m++)
+      for(p=0;p<k;p++) {
+	//put to the result  
+	result[i]=Y[m][p];
+	i++;
+      }
+  
+   
+    delete [] u;
+    for(i=0;i<k;i++)
+      delete [] Y[i];
+    delete [] Y;
+  }
+
+
+   void sum_of_diff_sign_select(double *X, int *nk, int *num, double *result)
+  {
+    int n=nk[0]; 
+    int k=nk[1];
+    int nu=num[0]; 
+    int i;
+    int j;
+    int m;  
+    int p=0;
+    double r; 
+    double *u;
+    u = new double[k];
+    double **Y = new double* [k];
+    for (i=0; i<k; i++) Y[i]=new double [k];
+
+    for(i=0;i<k;i++)
+      for(j=0;j<k;j++)
+	Y[i][j]=0.0;
+
+    double **data=prepmat(X,n,k);
+
+    // n-nu first
+    for(i=0;i<(n-nu);i++)
+      for(j=1;j<(nu+1);j++) {
+	//go over the pairs
+	r=0;
+	for(m=0;m<k;m++) {
+	  //compute the difference and its squared norm
+	  u[m] = data[i][m]-data[i+j][m];
+	  r+=(u[m]*u[m]);
+	}
+	r=sqrt(r);
+	for(m=0;m<k;m++)
+	  //compose the sign
+	  u[m]=u[m]/r;
+	for(m=0;m<k;m++)
+	  for(p=0;p<k;p++)
+	    if(p<(m+1)) 
+	      //compute the outer product elements
+	      //and sum to the sum matrix
+	      Y[m][p]+=(u[m]*u[p]);
+      } // j, i
+    
+    // the rest
+    for(i=(n-nu);i<(n-1);i++)
+      for(j=(i+1);j<n;j++) {
+	//go over the pairs
+	r=0;
+	for(m=0;m<k;m++) {
+	  //compute the difference and its squared norm
+	  u[m] = data[i][m]-data[j][m];
+	  r+=(u[m]*u[m]);
+	}
+	r=sqrt(r);
+	for(m=0;m<k;m++)
+	  //compose the sign
+	  u[m]=u[m]/r;
+	for(m=0;m<k;m++)
+	  for(p=0;p<k;p++)
+	    if(p<(m+1)) 
+	      //compute the outer product elements
+	      //and sum to the sum matrix
+	      Y[m][p]+=(u[m]*u[p]);
+      } // j, i
+
+
+    for(m=0;m<(k-1);m++)
+      for(p=(m+1);p<k;p++)
+	//fill up the matrix
+	Y[m][p]=Y[p][m];
+
+    i=0;
+    for(m=0;m<k;m++)
+      for(p=0;p<k;p++) {
+	//put to the result  
+	result[i]=Y[m][p];
+	i++;
+      }
+  
+    for(i=0;i<n;i++)   
+      delete [] data[i]; 
+    delete [] data;
+    delete [] u;
+    for(i=0;i<k;i++)
+      delete [] Y[i];
+    delete [] Y;
+  }
+
 }

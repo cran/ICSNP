@@ -23,6 +23,7 @@ function(X,maxiter=100,eps.scale=1e-6,eps.center=1e-6,na.action=na.fail)
             {
              stop("maxiter reached without convergence")
             } 
+        iter <- iter + 1
         theta.k1 <- center.step(X,A0,maxiter,eps.center) 
         V.k1 <- tyler.shape(X,location=theta.k1,eps=eps.scale,maxiter=maxiter,print.it=FALSE)
         A.k1 <- solve(mat.sqrt(V.k1))                                                
