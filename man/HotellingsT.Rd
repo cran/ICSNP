@@ -44,7 +44,8 @@
 
 \value{
   A list with class 'htest' containing the following components:
-  \item{statistic }{the value of the T2-statistic.}
+  \item{statistic }{the value of the T2-statistic. (That is the scaled value of the statistic that has an 
+                    F distribution or a chisquare distribution depending on the value of \code{test}).}
   \item{parameter}{the degrees of freedom for the T2-statistic.}
   \item{p.value}{the p-value for the test.}
   \item{null.value}{the specified hypothesized value of the mean or mean difference

@@ -503,4 +503,86 @@ void sum_of_diff_sign_outers(double *X, int *nk, double *result)
     delete [] Y;
   }
 
+  void symm_huber(double *X, double *V, int *nk, double *cs, double *sigs, double *result)
+  {
+    int n=nk[0]; 
+    int k=nk[1]; 
+    int i;
+    int j;
+    int l;
+    int m;  
+    int p=0;
+    double csq=cs[0];
+    double sigsq=sigs[0];
+    double rd=0.0; 
+    double *u;
+    u = new double[k];
+    double *r;
+    r = new double[k];
+    double w;
+    double **Y = new double* [k];
+    for (i=0; i<k; i++) Y[i]=new double [k];
+
+    for(i=0;i<k;i++)
+      for(j=0;j<k;j++)
+	Y[i][j]=0.0;
+ 
+    for(i=0;i<k;i++)
+       r[i]=0.0;
+
+    for(i=0;i<(n-1);i++) 
+      for(j=(i+1);j<n;j++) {
+	//go over the pairs
+	for(m=0;m<k;m++) {
+	  //compute the difference and its squared norm
+	  u[m] = X[m*n+i]-X[m*n+j];
+          //compute the Mahalanobis distance
+          for(l=0;l<k;l++) 
+           r[l] += u[m]*V[l*k+m];
+	}
+
+
+       for(m=0;m<k;m++)
+        rd += r[m]*u[m];
+
+       if(rd<=csq){ w=1/sigsq;
+       }else w=(csq/rd)/sigsq;
+ 
+       for(m=0;m<k;m++)
+        r[m]=0.0;
+       
+       rd=0.0;
+        
+	for(m=0;m<k;m++){
+	  for(p=0;p<k;p++){
+	    if(p<(m+1)) {
+	      //compute the outer product elements
+	      //and sum to the sum matrix
+	      Y[m][p]+=w*u[m]*u[p];
+            }
+          }
+        }   
+      } // j, i
+
+    for(m=0;m<(k-1);m++)
+      for(p=(m+1);p<k;p++)
+	//fill up the matrix
+	Y[m][p]=Y[p][m];
+
+    i=0;
+    for(m=0;m<k;m++)
+      for(p=0;p<k;p++) {
+	//put to the result  
+	result[i]=Y[m][p];
+	i++;
+      }
+  
+    delete [] r;
+    delete [] u;
+    for(i=0;i<k;i++)
+      delete [] Y[i];
+    delete [] Y;
+  }
+
+
 }
