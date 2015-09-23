@@ -3,7 +3,7 @@
 \name{tyler.shape}
 \alias{tyler.shape}
 
-\title{ Tylers Shape Matrix}
+\title{ Tyler's Shape Matrix}
 \description{
   Iterative algorithm to estimate Tyler's shape matrix.
 }

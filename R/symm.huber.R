@@ -26,7 +26,7 @@ symm.huber <- function(X, qg=0.9, init=NULL, eps = 1e-06, maxiter = 100, na.acti
         iter<-iter+1
         
         V.new<- SSCov.hub(X,solve(V.0),c.square,sigma.square)
-        differ <- ICS:::frobenius.norm(V.new-V.0)    
+        differ <- frobenius.norm(V.new-V.0)    
         V.0<-V.new
         }
     colnames(V.new) <- CNAMES

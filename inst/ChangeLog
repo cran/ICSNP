@@ -2,6 +2,11 @@ LOG of the CHANGES in the package ICSNP
 
 Version 1.0.9
 
+* changing the maintainer email address 
+* getting rid off some CRAN notes
+
+Version 1.0.9
+
 * improving the documentation 
 * the function symm.huber uses now C++ code written by Jari Miettinen
 

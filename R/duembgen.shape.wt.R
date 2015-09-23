@@ -52,7 +52,7 @@ duembgen.shape.wt <- function(X, wt =  rep(1, nrow(X)), init = NULL, eps = 1e-6,
             }
         # print(iter)
             V.new<-.wt.duembgen.step(V.0,data2,pwt,p,sum.pwt)
-            differ<-ICS:::frobenius.norm(V.new-V.0)
+            differ<-frobenius.norm(V.new-V.0)
             V.0<-V.new
             iter=iter+1 
             }
@@ -73,7 +73,7 @@ duembgen.shape.wt <- function(X, wt =  rep(1, nrow(X)), init = NULL, eps = 1e-6,
 
 .wt.duembgen.step<-function(V.old,datas,pwt,p,sum.pwt)
         {
-        sqrt.V.old <- ICS:::mat.sqrt(V.old)
+        sqrt.V.old <- mat.sqrt(V.old)
         r <- sqrt(rowSums((datas %*% sqrt.V.old)^2))
         datas2 <- sqrt(pwt)* (1/r) * datas
         datas3 <- datas2%*%sqrt.V.old

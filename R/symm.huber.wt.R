@@ -41,7 +41,7 @@ symm.huber.wt <- function(X, wt =  rep(1, nrow(X)), qg = 0.9, init = NULL, eps =
         w2<-ifelse(d2<=c.square, 1/sigma.square, (c.square/d2)/sigma.square)
         w.data3 <- sqrt(w2) * w.data2
         V.new<- (1/sum.pwt) * crossprod(w.data3)
-        differ <- ICS:::frobenius.norm(V.new-V.0)    
+        differ <- frobenius.norm(V.new-V.0)    
         V.0<-V.new
         }
     colnames(V.new) <- colnames(X)

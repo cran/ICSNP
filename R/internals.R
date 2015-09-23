@@ -7,3 +7,7 @@ d<-dim(X)
 matrix(.C("sum_of_sign_outers", as.double(X),as.integer(d), res=double(d[2]^2),PACKAGE="ICSNP")$res,ncol=d[2],byrow=T)
 }
 
+
+
+
+

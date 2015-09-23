@@ -1,6 +1,6 @@
 `frobenius.norm` <-
 function(A)
     {
-    sqrt(sum(diag(t(A)%*%A)))
+    sqrt(sum(A^2))
     }
 

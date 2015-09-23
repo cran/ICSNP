@@ -1,6 +1,7 @@
 import(stats)
 importFrom(ICS, ics, ics.components)
 importFrom(mvtnorm, rmvnorm)
+importFrom(utils, data)
 
 export(rank.ctest,rank.ictest,HotellingsT2,spatial.median,
 spatial.sign,HP1.shape,HR.Mest, duembgen.shape,

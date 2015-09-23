@@ -22,7 +22,7 @@ function(X,init=NULL,steps=Inf,eps=1e-6,maxiter=100,in.R=FALSE,na.action=na.fail
                 sqrtV <- mat.sqrt(V)
                 V.new <- crossprod(sqrtV, SSCov(tcrossprod(X, solve(sqrtV)))) %*% sqrtV
                 V.new <- shape.det(V.new)
-                if(all(is.infinite(steps), base:::norm(V.new-V, type="F")<eps)) break
+                if(all(is.infinite(steps), base::norm(V.new-V, type="F")<eps)) break
                 V<-V.new
                 }
             duembgen <- V.new
