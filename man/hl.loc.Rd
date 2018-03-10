@@ -28,7 +28,7 @@ London, Arnold. }
 }
 
 
-\author{ Klaus Nordhausen, \email{klaus.nordhausen@uta.fi } }
+\author{ Klaus Nordhausen }
 
 \seealso{\code{\link{wilcox.test}}}
 \examples{

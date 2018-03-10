@@ -14,8 +14,8 @@ This package contains functions and tools for multivariate nonparametric tests a
 \tabular{ll}{
 Package: \tab ICSNP\cr
 Type: \tab Package\cr
-Version: \tab 1.1-0\cr
-Date: \tab 2015-09-22\cr
+Version: \tab 1.1-1\cr
+Date: \tab 2018-03-10\cr
 License: \tab GPL (>= 2)\cr
 }
 
@@ -29,7 +29,7 @@ The parametric Hotelling's T test serves as a reference for the nonparametric lo
 Klaus Nordhausen, Seija \enc{Sirkiä}{Sirkia}, Hannu Oja and David E. Tyler
 
 Maintainer:
-Klaus Nordhausen, \email{klaus.nordhausen@utu.fi}
+Klaus Nordhausen, \email{klaus.nordhausen@tuwien.ac.at}
 }
 
 

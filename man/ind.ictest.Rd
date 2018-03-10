@@ -42,8 +42,9 @@ ind.ictest(X, index1, index2 = NULL, scores = "rank",
   \item{method}{a character string indicating what type of test was performed.}
   \item{data.name}{a character string giving the name of the data.}
 }
-\references{ \cite{Oja, H. and Paindaveine, D. and Taskinen, S. (2009), Parametric and Nonparametric Test for Multivariate Independence in IC Models, \emph{Manuscript}, \bold{1},  1--47. }  }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
+\references{ \cite{Oja, H. and Paindaveine, D. and Taskinen, S. (2016), Affine-invariant rank tests for multivariate independence in independent component models, \emph{Electronic Journal of Statistics}, \bold{10},  2372--2419. }  }
+
+\author{Klaus Nordhausen}
 \examples{
 Z1<-cbind(rt(500,5),rnorm(500),runif(500))
 Z2<-cbind(rt(500,8),rbeta(500,2,2))

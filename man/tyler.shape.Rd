@@ -31,6 +31,8 @@ The estimate is in such a way standardized, that its determinate is 1.
 The algorithm requires an estimate of location, if none is provided, the sample mean is used. Observations which are equal to the location estimate are removed form the data.
 
 The algorithm also allows for a k-step version where the iteration is run for a fixed number of steps instead of until convergence. If \code{steps} is finite that number of steps is taken and \code{maxiter} is ignored.
+
+A different implementation is available in the package fastM as the function \code{TYLERshape}.
 }
 \value{
   A matrix.
@@ -38,7 +40,7 @@ The algorithm also allows for a k-step version where the iteration is run for a 
 \references{
    \cite{Tyler, D.E. (1987), A distribution-free M-estimator of scatter, \emph{Annals of Statistics}, \bold{15},  234--251. }  
 }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
+\author{Klaus Nordhausen, and Seija \enc{Sirkiä}{Sirkia}}
 \seealso{ \code{\link{duembgen.shape}}, \code{\link{HR.Mest}}}
 \examples{
 set.seed(654321)

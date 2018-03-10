@@ -18,5 +18,5 @@ S3method(rank.ctest,ics)
 S3method(rank.ictest,default)
 S3method(rank.ictest,ics)
 
-useDynLib(ICSNP)
+useDynLib(ICSNP, .registration = TRUE)
 

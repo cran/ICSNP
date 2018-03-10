@@ -25,7 +25,7 @@ vdw.loc(x, int.diff = 10, maxiter = 1000, na.action = na.fail)
 }
 \references{ \cite{Hettmansperger, T.P. and McKean, J.W. (1998), \emph{Robust Nonparametric Statistical Methods},
 London, Arnold. }}
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi  }}
+\author{Klaus Nordhausen}
 
 \examples{
 set.seed(1)

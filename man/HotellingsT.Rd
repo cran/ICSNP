@@ -59,7 +59,7 @@
 \references{ \cite{Anderson, T.W. (2003), \emph{An introduction to
 multivariate analysis}, New Jersey: Wiley. }  }
 
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
+\author{Klaus Nordhausen}
 
 \examples{ 
 # one sample test:

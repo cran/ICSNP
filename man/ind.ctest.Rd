@@ -33,7 +33,7 @@ ind.ctest(X, index1, index2 = NULL, scores = "rank",
 }
 \references{\cite{Puri , M.L. and Sen, P.K. (1971), \emph{Nonparametric Methods in Multivariate Analysis}, New York: Wiley.   }}
 
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
+\author{Klaus Nordhausen}
 
 \examples{
 A1 <- matrix(c(4, 4, 5, 4, 6, 6, 5, 6, 7), ncol = 3)

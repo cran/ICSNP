@@ -59,7 +59,7 @@
             \cite{Nordhausen, K., Oja, H. and Tyler, D.E. (2006), On the Efficiency of Invariant Multivariate Sign and Rank Tests, in 
             \emph{Festschrift of Tarmo Pukkila on his 60th Birthday}, 217--231.}}
             
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
+\author{Klaus Nordhausen}
 
 \examples{
 # one sample tests:

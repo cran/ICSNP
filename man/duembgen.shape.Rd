@@ -30,6 +30,8 @@ Therefore this shape matrix needs no location parameter.
 The function is, however, slow if the dataset is large.
 
 The algorithm also allows for a k-step version where the iteration is run for a fixed number of steps instead of until convergence. If \code{steps} is finite that number of steps is taken and \code{maxiter} is ignored.
+
+A better implementation is available in the package fastM as the function \code{DUEMBGENshape}.
 }
 \value{
   A matrix.
@@ -37,7 +39,7 @@ The algorithm also allows for a k-step version where the iteration is run for a 
 \references{
    \cite{\enc{Dümbgen}{Duembgen}, L. (1998), On Tyler's M-functional of scatter in high dimension, \emph{Annals of Institute of Statistical Mathematics}, \bold{50},  471--491. }  
 }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}, and some of the C++ is based on work by Jari Miettinen}
+\author{Klaus Nordhausen, Seija \enc{Sirkiä}{Sirkia}, and some of the C++ is based on work by Jari Miettinen}
 \seealso{ \code{\link{tyler.shape}}, \code{\link{duembgen.shape.wt}}}
 \examples{
 set.seed(654321)

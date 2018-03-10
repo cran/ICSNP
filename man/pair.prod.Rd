@@ -18,7 +18,7 @@ pair.prod(X)
 \value{
   Matrix containing the products.
 }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
+\author{Klaus Nordhausen}
 \seealso{\code{\link{pair.diff}}, \code{\link{pair.sum}}}
 \examples{
 X <- matrix(1:10, ncol = 2, byrow = FALSE)

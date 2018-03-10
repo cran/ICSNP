@@ -30,7 +30,7 @@ symm.huber.wt(X, wt = rep(1, nrow(X)), qg = 0.9, init = NULL,
   a matrix.
 }
 \references{ \cite{\enc{Sirkiä}{Sirkia}, S., Taskinen, S. and Oja, H. (2007), Symmetrised M-estimators of scatter. \emph{Journal of Multivariate Analysis}, \bold{98}, 1611--1629. } }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi }}
+\author{Klaus Nordhausen}
 
 \seealso{ \code{\link{symm.huber}} }
 \examples{

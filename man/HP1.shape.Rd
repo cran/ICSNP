@@ -36,7 +36,7 @@ HP1.shape(X, location = "Estimate", na.action = na.fail, ...)
             \cite{Nordhausen, K., Oja, H. and Paindaveine, D. (2009), Signed-rank tests for location in the symmetric independent component model, \emph{Journal of Multivariate Analysis}, \bold{100},  821--834. }}
 
 
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}}
+\author{Klaus Nordhausen}
 
 \examples{
 set.seed(654321)

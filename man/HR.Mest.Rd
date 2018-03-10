@@ -44,7 +44,7 @@ HR.Mest(X, maxiter = 100, eps.scale = 1e-06, eps.center = 1e-06,
 }
 \references{\cite{Hettmansperger, T.P. and Randles, R.H. (2002), A practical affine equivariant multivariate median, \emph{Biometrika}, \bold{89},  851--860. }}
 
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Seija \enc{Sirkiä}{Sirkia}, \email{seija.sirkia@iki.fi}}
+\author{Klaus Nordhausen and Seija \enc{Sirkiä}{Sirkia}}
 
 \examples{
 set.seed(654321)

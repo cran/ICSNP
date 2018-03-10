@@ -61,7 +61,7 @@ A list with class 'htest' containing the following components:
 }
 
 \author{
-Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}
+Klaus Nordhausen
 }
 
 \seealso{

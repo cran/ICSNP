@@ -31,7 +31,7 @@ symm.huber(X, qg = 0.9, init = NULL, eps = 1e-06, maxiter = 100,
   a matrix.
 }
 \references{ \cite{\enc{Sirkiä}{Sirkia}, S., Taskinen, S. and Oja, H. (2007), Symmetrised M-estimators of scatter. \emph{Journal of Multivariate Analysis}, \bold{98}, 1611--1629. } }
-\author{Klaus Nordhausen, \email{klaus.nordhausen@uta.fi}, and Jari Miettinen}
+\author{Klaus Nordhausen and Jari Miettinen}
 
 \seealso{ \code{\link{symm.huber.wt}}, \code{symmhuber}, \code{mvhuberM}}
 \examples{
