@@ -40,7 +40,7 @@ spatial.sign(X, center = TRUE, shape = TRUE,
      'center' and 'shape'.
 
 }
-\author{Klaus Nordhausen and Seija \enc{Sirkiä}{Sirkia}}
+\author{Klaus Nordhausen and Seija Sirkia}
 
 \seealso{  \code{\link{HR.Mest}} }
 \examples{

@@ -19,7 +19,7 @@ pair.sum(X)
   Matrix containing the sums.
 }
 
-\author{Seija \enc{Sirkiä}{Sirkia}}
+\author{Seija Sirkia}
 
 \seealso{\code{\link{pair.diff}}, \code{\link{pair.prod}}}
 \examples{

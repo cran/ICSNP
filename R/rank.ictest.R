@@ -86,7 +86,7 @@ function(X, index = NULL, na.action = na.fail, ...)
     {
     
     DNAME<-deparse(substitute(X))
-    if (class(X) != "ics") stop("'ics' must be of class 'ics'") 
+    if(!inherits(X, "ics")) stop("'ics' must be of class 'ics'") 
     
     Z <- ics.components(X)
     p <- dim(Z)[2]

@@ -18,7 +18,7 @@ pair.diff(X)
 \value{
   Matrix containing the differences.
 }
-\author{Seija \enc{Sirkiä}{Sirkia}}
+\author{Seija Sirkia}
 \seealso{\code{\link{pair.prod}}, \code{\link{pair.sum}}}
 \examples{
 X <- matrix(1:10, ncol = 2, byrow = FALSE)

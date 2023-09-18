@@ -1,5 +1,11 @@
 LOG of the CHANGES in the package ICSNP
 
+Version 1.1.2
+
+* changing the maintainer email address 
+* getting rid off some CRAN notes
+* updating some help files
+
 Version 1.1.1
 
 * changing the maintainer email address 

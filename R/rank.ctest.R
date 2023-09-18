@@ -193,7 +193,7 @@ function(X, g = NULL, index = NULL, na.action = na.fail, ...)
     
     if (!is.null(g)) {DNAME<-paste(deparse(substitute(X)),"and",deparse(substitute(g)))}
     else {DNAME<-deparse(substitute(X))}
-    if (class(X) != "ics") stop("'ics' must be of class 'ics'") 
+    if (!inherits(X, "ics")) stop("'ics' must be of class 'ics'") 
     if (!is.null(g) & !is.factor(g)) stop("'g' must be a factor with at least two levels")
     if (!is.null(g) & nlevels(g) < 2) stop("'g' must be a factor with at least two levels")
     

@@ -10,7 +10,7 @@
   A data frame with 12 observations on the following 3 variables.
   \describe{
     \item{\code{FVC}}{change in FVC (forced vital capacity) after 6 hours.}
-    \item{\code{FEV}}{change in FEV\_3 (forced expiratory volume) after 6 hours.}
+    \item{\code{FEV}}{change in FEV_3 (forced expiratory volume) after 6 hours.}
     \item{\code{CC}}{change in CC (closing capacity) after 6 hours.}
   }
 }
@@ -24,7 +24,6 @@ There is also a different version of this data set around. In the different vers
   
   Reprinted with permission of the Helen Dwight Reid Educational Foundation.  
   Published by Heldref Publications, 1319 Eighteenth St., NW, Washington, DC 20036-1802. 
-  \url{www.heldref.org}.
 }
 \references{
   \cite{Hettmansperger, T. P. and McKean, J. W. (1998), \emph{Robust Nonparametric Statistical Methods}, London: Arnold.  }}

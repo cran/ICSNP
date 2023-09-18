@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Weighted Duembgen's Shape Matrix}
 \description{
-   Iterative algorithm to estimate the weighted version of \enc{Dümbgen}{Duembgen}'s shape matrix. 
+   Iterative algorithm to estimate the weighted version of Duembgen's shape matrix. 
 }
 \usage{
 duembgen.shape.wt(X, wt = rep(1, nrow(X)), init = NULL, 
@@ -20,7 +20,7 @@ duembgen.shape.wt(X, wt = rep(1, nrow(X)), init = NULL,
           contain 'NA's.  Default is to fail.}
 }
 \details{
-  The weighted \enc{Dümbgen}{Duembgen} shape matrix can be seen as \code{\link{tyler.shape}}'s matrix wrt to the origin for the weighted pairwise differences of the observations.
+  The weighted Duembgen shape matrix can be seen as \code{\link{tyler.shape}}'s matrix wrt to the origin for the weighted pairwise differences of the observations.
   Therefore this shape matrix needs no location parameter.
   
   Note that this function is memory comsuming and slow for large data sets since the matrix is based on all pairwise difference of the observations.
@@ -28,7 +28,7 @@ duembgen.shape.wt(X, wt = rep(1, nrow(X)), init = NULL,
 \value{
 a matrix.
 }
-\references{ \cite{\enc{Sirkiä}{Sirkia}, S., Taskinen, S. and Oja, H. (2007), Symmetrised M-estimators of scatter. \emph{Journal of Multivariate Analysis}, \bold{98}, 1611--1629. } }
+\references{ \cite{Sirkia, S., Taskinen, S. and Oja, H. (2007), Symmetrised M-estimators of scatter. \emph{Journal of Multivariate Analysis}, \bold{98}, 1611--1629. } }
 \author{Klaus Nordhausen}
 
 

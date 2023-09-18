@@ -40,7 +40,7 @@ A different implementation is available in the package fastM as the function \co
 \references{
    \cite{Tyler, D.E. (1987), A distribution-free M-estimator of scatter, \emph{Annals of Statistics}, \bold{15},  234--251. }  
 }
-\author{Klaus Nordhausen, and Seija \enc{Sirkiä}{Sirkia}}
+\author{Klaus Nordhausen, and Seija Sirkia}
 \seealso{ \code{\link{duembgen.shape}}, \code{\link{HR.Mest}}}
 \examples{
 set.seed(654321)

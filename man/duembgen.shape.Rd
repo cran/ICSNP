@@ -1,12 +1,9 @@
-\encoding{latin1}
-
-
 \name{duembgen.shape}
 \alias{duembgen.shape}
 
 \title{ Duembgen's Shape Matrix }
 \description{
-  Iterative algorithm to estimate \enc{Dümbgen}{Duembgen}'s shape matrix. 
+  Iterative algorithm to estimate Duembgen's shape matrix. 
 }
 \usage{
 duembgen.shape(X, init = NULL, steps = Inf, eps = 1e-06, 
@@ -24,7 +21,7 @@ duembgen.shape(X, init = NULL, steps = Inf, eps = 1e-06,
           contain 'NA's.  Default is to fail.}
   \item{\dots}{ other arguments passed on to  \code{\link{tyler.shape}}.}
 }
-\details{\enc{Dümbgen's}{Duembgen's} shape matrix can be seen as \code{\link{tyler.shape}}'s matrix wrt to the origin for the pairwise differences of the observations.
+\details{Duembgen's shape matrix can be seen as \code{\link{tyler.shape}}'s matrix wrt to the origin for the pairwise differences of the observations.
 Therefore this shape matrix needs no location parameter.
 
 The function is, however, slow if the dataset is large.
@@ -37,9 +34,9 @@ A better implementation is available in the package fastM as the function \code{
   A matrix.
 }
 \references{
-   \cite{\enc{Dümbgen}{Duembgen}, L. (1998), On Tyler's M-functional of scatter in high dimension, \emph{Annals of Institute of Statistical Mathematics}, \bold{50},  471--491. }  
+   \cite{Duembgen, L. (1998), On Tyler's M-functional of scatter in high dimension, \emph{Annals of Institute of Statistical Mathematics}, \bold{50},  471--491. }  
 }
-\author{Klaus Nordhausen, Seija \enc{Sirkiä}{Sirkia}, and some of the C++ is based on work by Jari Miettinen}
+\author{Klaus Nordhausen, Seija Sirkia, and some of the C++ is based on work by Jari Miettinen}
 \seealso{ \code{\link{tyler.shape}}, \code{\link{duembgen.shape.wt}}}
 \examples{
 set.seed(654321)

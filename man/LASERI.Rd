@@ -62,7 +62,7 @@ Of interest in this data is for example if the values 5 minutes after the
 tilt are already returned to their pre-tilt levels.
 }
 \source{
-Data courtesy of the LASERI study \cr (\url{http://youngfinnsstudy.utu.fi/}).
+Data courtesy of the LASERI study \cr (\url{https://youngfinnsstudy.utu.fi/}).
 }
 
 \examples{
